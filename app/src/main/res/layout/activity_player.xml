@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.5"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btnBack"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/ic_arrow_back_white_24px" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/btnSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -55,9 +55,11 @@
         android:id="@+id/cover"
         android:layout_width="186dp"
         android:layout_height="186dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/song_progressbar"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_tro" />
@@ -97,14 +99,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_playlist_play_white_24px" />
 
+    <TextView
+        android:id="@+id/song_progress_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toStartOf="@+id/song_progress_max"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/playPause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/song_progress_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="04.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
     <ImageView
         android:id="@+id/playPause"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="72dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
         app:layout_constraintEnd_toStartOf="@+id/next"
         app:layout_constraintStart_toEndOf="@+id/previous"
         app:srcCompat="@drawable/ic_play_arrow_white_48px" />
@@ -114,8 +151,8 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_last_page_white_48px" />
 
@@ -124,42 +161,38 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="76dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_first_page_white_48px" />
 
-    <ProgressBar
-        android:id="@+id/song_progressbar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <SeekBar
+        android:id="@+id/seekBar2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/playPause"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/song_progress_current"
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="00:00"
-        app:layout_constraintEnd_toStartOf="@+id/song_progress_max"
-        app:layout_constraintHorizontal_bias="0.09"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song_progressbar" />
+        app:srcCompat="@drawable/ic_volume_down_white_24px" />
 
-    <TextView
-        android:id="@+id/song_progress_max"
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="04.25"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song_progressbar" />
+        app:srcCompat="@drawable/ic_volume_up_white_24px" />
 
 </android.support.constraint.ConstraintLayout>
